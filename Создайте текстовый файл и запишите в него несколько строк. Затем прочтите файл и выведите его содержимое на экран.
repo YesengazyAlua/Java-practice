@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class FileIOExample {
+    public static void main(String[] args) {
+        String fileName = "sample.txt";
+        try {
+           FileWriter fileWriter = new FileWriter(fileName);
+          BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+           bufferedWriter.write("Это первая строка.");
+            bufferedWriter.newLine(); // Переход на следующую строку
+            bufferedWriter.write("Это вторая строка.");
+            bufferedWriter.newLine();
+            bufferedWriter.write("Это третья строка.");
+           bufferedWriter.close();
+            System.out.println("Файл успешно записан.");
+           FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            System.out.println("\nСодержимое файла:");
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+          bufferedReader.close();
+        } catch (IOException e) {
+            System.err.println("Произошла ошибка при работе с файлом: " + e.getMessage());
+        }
+    }
+}
