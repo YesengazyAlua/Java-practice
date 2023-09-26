@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListExample {
+    public static void main(String[] args) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Первый");
+        stringList.add("Второй");
+        stringList.add("Третий");
+        System.out.println("Список после добавления элементов:");
+        System.out.println(stringList);
+        stringList.remove(1);
+        System.out.println("Список после удаления элемента по индексу:");
+        System.out.println(stringList);
+        String searchString = "Третий";
+        boolean contains = stringList.contains(searchString);
+        if (contains) {
+            System.out.println("Список содержит элемент: " + searchString);
+        } else {
+            System.out.println("Список не содержит элемент: " + searchString);
+        }
+    }
+}
