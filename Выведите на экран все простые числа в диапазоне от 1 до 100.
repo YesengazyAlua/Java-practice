@@ -1,0 +1,20 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            System.out.print("Введите число: ");
+            double number = scanner.nextDouble();
+            
+            double square = number * number;
+            System.out.println("Квадрат числа " + number + " равен " + square);
+        } catch (InputMismatchException e) {
+            System.out.println("Ошибка: введены некорректные данные. Введите число.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
